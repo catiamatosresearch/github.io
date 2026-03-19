@@ -1,190 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr Catia Matos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr Catia Matos | Spatial Ecology & Conservation</title>
+  <style>
+    :root {
+      --bg: #f5f7f8;
+      --surface: #ffffff;
+      --surface-2: #f0f4f4;
+      --text: #1c2630;
+      --muted: #5b6773;
+      --accent: #0f766e;
+      --accent-dark: #0b5d57;
+      --border: #dbe3e6;
+      --max: 1120px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f9fb;
-  color: #1f2937;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-header {
-  background: #0f766e;
-  color: white;
-  padding: 40px 20px;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-.header-flex {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-.header-flex img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-h1 {
-  margin: 0;
-}
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
 
-.subtitle {
-  opacity: 0.9;
-}
+    .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-section {
-  background: white;
-  padding: 25px;
-  margin: 20px 0;
-  border-radius: 12px;
-}
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
 
-h2 {
-  color: #0f766e;
-}
+    .brand {
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.2px;
+    }
 
-a {
-  color: #0f766e;
-  text-decoration: none;
-}
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
 
-ul li {
-  margin-bottom: 12px;
-}
+    .nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
 
-footer {
-  text-align: center;
-  color: gray;
-  margin: 40px 0;
-}
-</style>
+    .hero {
+      background: linear-gradient(135deg, #0d5d58 0%, #0f766e 45%, #124d59 100%);
+      color: white;
+      padding: 68px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 4px solid rgba(255,255,255,0.85);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 2.6rem;
+      line-height: 1.15;
+    }
+
+    .hero .role {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #d8fffb;
+    }
+
+    .hero .affiliation {
+      margin: 0 0 18px;
+      color: #ebfffd;
+      font-size: 1rem;
+    }
+
+    .hero p {
+      margin: 0 0 16px;
+      max-width: 760px;
+      color: #f3fffe;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .hero-links a {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-links a:hover {
+      text-decoration: none;
+      background: rgba(255,255,255,0.16);
+    }
+
+    main {
+      padding: 34px 0 60px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .card h2 {
+      margin: 0 0 16px;
+      color: var(--accent-dark);
+      font-size: 1.45rem;
+      line-height: 1.2;
+    }
+
+    .card h3 {
+      margin: 22px 0 8px;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .lead {
+      font-size: 1.02rem;
+      color: var(--text);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      background: var(--surface-2);
+      color: var(--accent-dark);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .pub {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pub:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .pub-title {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .side-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .side-list li {
+      margin-bottom: 10px;
+    }
+
+    .quick-facts p {
+      margin: 0 0 10px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 11px 15px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      background: var(--accent-dark);
+    }
+
+    footer {
+      padding: 10px 0 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .hero img {
+        width: 180px;
+        height: 180px;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 22px;
+      }
+
+      .hero-links {
+        gap: 10px;
+      }
+
+      .hero-links a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-  <div class="container header-flex">
-    <img src="https://github.com/catiamatosresearch.png" alt="Profile photo">
-    <div>
-      <h1>Dr Catia Matos</h1>
-      <p class="subtitle">Lecturer in Biological Sciences</p>
-      <p>University of Hull</p>
-      <p>Email: <a href="mailto:c.matos@hull.ac.uk" style="color:white;">c.matos@hull.ac.uk</a></p>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">Dr Catia Matos</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#service">Service</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<div class="container">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <img src="https://github.com/catiamatosresearch.png" alt="Dr Catia Matos profile photo" />
+      </div>
+      <div>
+        <h1>Dr Catia Matos</h1>
+        <p class="role">Lecturer in Biological Sciences</p>
+        <p class="affiliation">School of Environmental and Life Sciences · University of Hull</p>
+        <p>
+          I work on spatial ecology in disturbed landscapes, with a focus on how species respond
+          behaviourally and ecologically to environmental change. My research combines ecology,
+          conservation, GIS, and remote sensing to support long-term biodiversity strategies.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:c.matos@hull.ac.uk">Email</a>
+          <a href="https://scholar.google.com/citations?user=t1rG4EMAAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a href="https://orcid.org/0000-0001-8452-5629" target="_blank">ORCID</a>
+          <a href="https://www.linkedin.com/in/c%C3%A1tia-matos/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>About</h2>
-<p>
-I am a lecturer in Biological Sciences at the School of Environmental and Life Sciences,
-University of Hull, and Programme Director of the MSc Environmental Change, Management and Monitoring.
-</p>
+  <main class="container">
+    <div class="grid">
+      <div>
+        <section class="card" id="about">
+          <h2>About</h2>
+          <p class="lead">
+            I am a lecturer in Biological Sciences at the University of Hull and currently lead the
+            MSc Environmental Change, Management and Monitoring programme.
+          </p>
+          <p>
+            My research aims to provide new insights into how species adapt and modify their behaviour
+            in response to drivers of environmental change, enabling the development of long-term
+            conservation strategies. I am also interested in using GIS and remote sensing applications
+            to support efforts addressing biodiversity decline.
+          </p>
+          <p>
+            I work with multidisciplinary groups and contribute to open data projects, integrating ecology
+            with innovative communities including consulting companies and science labs.
+          </p>
+          <p class="muted">
+            Before joining the University of Hull in 2022, I worked at the University of Azores,
+            the University of Hull Scarborough Campus, and the University of Porto. I completed my PhD
+            in Biological Sciences at the University of Hull in 2018.
+          </p>
+        </section>
 
-<p>
-My research focuses on <b>spatial ecology in disturbed landscapes</b>, exploring how species adapt
-their behaviour in response to environmental change to support long-term conservation strategies.
-</p>
+        <section class="card" id="research">
+          <h2>Research</h2>
+          <p>
+            My work sits at the intersection of ecology, landscape change, and conservation planning.
+            I am particularly interested in how species move through fragmented or human-altered
+            environments, and how spatial tools can inform better conservation decisions.
+          </p>
 
-<p>
-I am particularly interested in the application of <b>GIS and remote sensing</b> to biodiversity
-conservation, and I collaborate across multidisciplinary teams including academia and industry.
-</p>
+          <h3>Research Interests</h3>
+          <div class="tag-list">
+            <span class="tag">Spatial Ecology</span>
+            <span class="tag">Movement Ecology</span>
+            <span class="tag">Ecological Modelling</span>
+            <span class="tag">Connectivity Conservation</span>
+            <span class="tag">GIS</span>
+            <span class="tag">Remote Sensing</span>
+          </div>
 
-<p>
-Member of the British Ecological Society and the IUCN Connectivity Conservation Specialist Group.
-</p>
-</section>
+          <h3>Current Themes</h3>
+          <ul>
+            <li>Species behaviour and adaptation under environmental change</li>
+            <li>Landscape connectivity in fragmented and urbanising regions</li>
+            <li>GIS and remote sensing applications for biodiversity assessment</li>
+            <li>Spatial approaches to long-term conservation planning</li>
+          </ul>
+        </section>
 
-<section>
-<h2>Research Interests</h2>
-<ul>
-<li>Spatial Ecology</li>
-<li>Movement Ecology</li>
-<li>Ecological Modelling</li>
-<li>Connectivity Conservation</li>
-<li>GIS and Remote Sensing</li>
-</ul>
-</section>
+        <section class="card" id="publications">
+          <h2>Selected Publications</h2>
+          <div class="pub-list">
+            <div class="pub">
+              <div class="pub-title">Landscape connectivity and spatial prioritization in an urbanising world: A network analysis approach for a threatened amphibian</div>
+              <div class="pub-meta">C. Matos, S.O. Petrovan, P.M. Wheeler, A.I. Ward · <em>Biological Conservation</em> · 2019</div>
+            </div>
 
-<section>
-<h2>Selected Publications</h2>
-<ul>
-<li>
-<b>Landscape connectivity and spatial prioritization in an urbanising world</b><br>
-Biological Conservation (2019)  
-</li>
+            <div class="pub">
+              <div class="pub-title">Short-term movements and behaviour govern the use of road mitigation measures by a protected amphibian</div>
+              <div class="pub-meta">C. Matos, S.O. Petrovan, P.M. Wheeler, A.I. Ward · <em>Animal Conservation</em> · 2019</div>
+            </div>
 
-<li>
-<b>Short-term movements and behaviour of protected amphibians</b><br>
-Animal Conservation (2019)
-</li>
+            <div class="pub">
+              <div class="pub-title">Facilitating permeability of landscapes impacted by roads for protected amphibians: patterns of movement for the great crested newt</div>
+              <div class="pub-meta">C. Matos, S. Petrovan, A.I. Ward, P. Wheeler · <em>PeerJ</em> · 2017</div>
+            </div>
 
-<li>
-<b>Facilitating permeability of landscapes impacted by roads</b><br>
-PeerJ (2017)
-</li>
+            <div class="pub">
+              <div class="pub-title">Local segregation of realised niches in lizards</div>
+              <div class="pub-meta">N. Sillero, E. Argaña, C. Matos, M. Franch, A. Kaliontzopoulou, M.A. Carretero · <em>ISPRS International Journal of Geo-Information</em> · 2020</div>
+            </div>
 
-<li>
-<b>Spatial analysis of amphibian road mortality</b><br>
-Amphibia-Reptilia (2012)
-</li>
-</ul>
+            <div class="pub">
+              <div class="pub-title">Spatial analysis of amphibian road mortality levels in northern Portugal country roads</div>
+              <div class="pub-meta">C. Matos, N. Sillero, E. Argaña · <em>Amphibia-Reptilia</em> · 2012</div>
+            </div>
+          </div>
 
-<p>
-👉 Full list on <a href="https://scholar.google.com/citations?user=t1rG4EMAAAAJ&hl=en" target="_blank">Google Scholar</a>
-</p>
-</section>
+          <a class="button" href="https://scholar.google.com/citations?user=t1rG4EMAAAAJ&hl=en" target="_blank">View full publication list</a>
+        </section>
 
-<section>
-<h2>Teaching</h2>
-<p>
-Programme Director of MSc Environmental Change, Management and Monitoring.
-</p>
-<p>
-Teaching in GIS and Remote Sensing at undergraduate and postgraduate level.
-</p>
-</section>
+        <section class="card" id="teaching">
+          <h2>Teaching & Leadership</h2>
+          <p>
+            I am Programme Director of the MSc <em>Environmental Change, Management and Monitoring</em>.
+          </p>
+          <p>
+            I also lead undergraduate and postgraduate teaching in GIS and Remote Sensing, supporting
+            students in developing spatial and analytical approaches to environmental science.
+          </p>
+        </section>
 
-<section>
-<h2>Editorial Work</h2>
-<p>
-Associate Editor – Ecological Solutions and Evidence (British Ecological Society)
-</p>
-</section>
+        <section class="card" id="service">
+          <h2>Professional Service</h2>
+          <p>
+            Associate Editor for <em>Ecological Solutions and Evidence</em> at the British Ecological Society.
+          </p>
+          <p>
+            Member of the British Ecological Society and the IUCN Connectivity Conservation Specialist Group.
+          </p>
+        </section>
+      </div>
 
-<section>
-<h2>Links</h2>
-<p>
-<a href="https://scholar.google.com/citations?user=t1rG4EMAAAAJ&hl=en">Google Scholar</a> |
-<a href="https://orcid.org/0000-0001-8452-5629">ORCID</a> |
-<a href="https://www.linkedin.com/in/c%C3%A1tia-matos/">LinkedIn</a>
-</p>
-</section>
+      <aside>
+        <section class="card quick-facts">
+          <h2>Profile</h2>
+          <p><strong>Name:</strong> Dr Catia Matos</p>
+          <p><strong>Position:</strong> Lecturer in Biological Sciences</p>
+          <p><strong>Institution:</strong> University of Hull</p>
+          <p><strong>Department:</strong> School of Environmental and Life Sciences</p>
+        </section>
 
-</div>
+        <section class="card">
+          <h2>Research Areas</h2>
+          <ul class="side-list">
+            <li>Spatial ecology in disturbed landscapes</li>
+            <li>Species responses to environmental change</li>
+            <li>Landscape connectivity</li>
+            <li>GIS and remote sensing for conservation</li>
+          </ul>
+        </section>
 
-<footer>
-<p>© Dr Catia Matos</p>
-</footer>
+        <section class="card">
+          <h2>Links</h2>
+          <ul class="side-list">
+            <li><a href="https://scholar.google.com/citations?user=t1rG4EMAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0001-8452-5629" target="_blank">ORCID</a></li>
+            <li><a href="https://www.linkedin.com/in/c%C3%A1tia-matos/" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:c.matos@hull.ac.uk">Email</a></li>
+          </ul>
+        </section>
 
+        <section class="card" id="contact">
+          <h2>Contact</h2>
+          <p>
+            Email is the best way to get in touch regarding research, teaching, and collaboration.
+          </p>
+          <a class="button" href="mailto:c.matos@hull.ac.uk">Contact by email</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    © Dr Catia Matos · University of Hull
+  </footer>
 </body>
 </html>
