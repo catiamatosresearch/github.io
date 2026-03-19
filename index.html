@@ -1,276 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr Catia Matos | Academic Website</title>
-  <style>
-    :root {
-      --bg: #f7f9fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #0f766e;
-      --border: #e5e7eb;
-      --max-width: 980px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr Catia Matos</title>
 
-    * {
-      box-sizing: border-box;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f9fb;
+  color: #1f2937;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
 
-    header {
-      background: linear-gradient(135deg, #0f766e, #134e4a);
-      color: white;
-      padding: 60px 20px 40px;
-    }
+header {
+  background: #0f766e;
+  color: white;
+  padding: 40px 20px;
+}
 
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+.header-flex {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      align-items: center;
-    }
+.header-flex img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+}
 
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 2.4rem;
-    }
+h1 {
+  margin: 0;
+}
 
-    .hero p {
-      margin: 8px 0;
-      font-size: 1.05rem;
-    }
+.subtitle {
+  opacity: 0.9;
+}
 
-    .subtitle {
-      color: #d1fae5;
-      font-weight: 500;
-    }
+section {
+  background: white;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 12px;
+}
 
-    nav {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+h2 {
+  color: #0f766e;
+}
 
-    nav .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      padding: 14px 20px;
-    }
+a {
+  color: #0f766e;
+  text-decoration: none;
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+ul li {
+  margin-bottom: 12px;
+}
 
-    main {
-      padding: 30px 0 60px;
-    }
-
-    section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-    }
-
-    h2 {
-      margin-top: 0;
-      color: var(--accent);
-      font-size: 1.5rem;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .links a {
-      display: inline-block;
-      margin-right: 14px;
-      margin-bottom: 10px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .small {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 30px 20px 50px;
-      font-size: 0.95rem;
-    }
-
-    .highlight {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    @media (max-width: 700px) {
-      .hero h1 {
-        font-size: 1.9rem;
-      }
-
-      section {
-        padding: 22px;
-      }
-    }
-  </style>
+footer {
+  text-align: center;
+  color: gray;
+  margin: 40px 0;
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="container hero">
-      <div>
-        <h1>Dr Catia Matos</h1>
-        <p class="subtitle">Lecturer in Biological Sciences</p>
-        <p>School of Environmental and Life Sciences, University of Hull</p>
-        <p>Email: <a href="mailto:c.matos@hull.ac.uk" style="color: white;">c.matos@hull.ac.uk</a></p>
-      </div>
+
+<header>
+  <div class="container header-flex">
+    <img src="https://github.com/catiamatosresearch.png" alt="Profile photo">
+    <div>
+      <h1>Dr Catia Matos</h1>
+      <p class="subtitle">Lecturer in Biological Sciences</p>
+      <p>University of Hull</p>
+      <p>Email: <a href="mailto:c.matos@hull.ac.uk" style="color:white;">c.matos@hull.ac.uk</a></p>
     </div>
-  </header>
+  </div>
+</header>
 
-  <nav>
-    <div class="container">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#editorial">Editorial Work</a>
-      <a href="#links">Links</a>
-    </div>
-  </nav>
+<div class="container">
 
-  <main class="container">
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I am a lecturer in Biological Sciences at the School of Environmental and Life Sciences
-        at the University of Hull. I currently lead the MSc Environmental Change, Management and
-        Monitoring programme.
-      </p>
-      <p>
-        My research focuses on <span class="highlight">spatial ecology in disturbed landscapes</span>.
-        My current work aims to provide new insights into how species adapt and modify their behaviour
-        in response to drivers of environmental change, supporting the development of long-term
-        conservation strategies.
-      </p>
-      <p>
-        I am also interested in using <span class="highlight">GIS and remote sensing</span> applications
-        to address the current biodiversity decline. I am actively involved in open data projects and
-        work with multidisciplinary groups, integrating ecology in innovative communities such as
-        consulting companies and science labs.
-      </p>
-      <p>
-        I am a member of the British Ecological Society and the Connectivity Conservation Specialist
-        Group for the IUCN.
-      </p>
-      <p class="small">
-        Before joining the University of Hull in 2022, I worked at the University of Azores,
-        the University of Hull Scarborough Campus, and the University of Porto (Centre for Geospatial Science).
-        I completed my PhD in Biological Sciences at the University of Hull in 2018.
-      </p>
-    </section>
+<section>
+<h2>About</h2>
+<p>
+I am a lecturer in Biological Sciences at the School of Environmental and Life Sciences,
+University of Hull, and Programme Director of the MSc Environmental Change, Management and Monitoring.
+</p>
 
-    <section id="research">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Spatial Ecology</li>
-        <li>Movement Ecology</li>
-        <li>Ecological Modelling</li>
-        <li>Connectivity Conservation</li>
-        <li>GIS and Remote Sensing</li>
-      </ul>
-    </section>
+<p>
+My research focuses on <b>spatial ecology in disturbed landscapes</b>, exploring how species adapt
+their behaviour in response to environmental change to support long-term conservation strategies.
+</p>
 
-    <section id="publications">
-      <h2>Selected Publications</h2>
-      <ul>
-        <li><strong>Local segregation of realised niches in lizards</strong><br>N. Sillero, E. Argaña, C. Matos, M. Franch, A. Kaliontzopoulou, M.A. Carretero<br><em>ISPRS International Journal of Geo-Information</em>, 2020</li>
+<p>
+I am particularly interested in the application of <b>GIS and remote sensing</b> to biodiversity
+conservation, and I collaborate across multidisciplinary teams including academia and industry.
+</p>
 
-        <li><strong>Landscape connectivity and spatial prioritization in an urbanising world: A network analysis approach for a threatened amphibian</strong><br>C. Matos, S.O. Petrovan, P.M. Wheeler, A.I. Ward<br><em>Biological Conservation</em>, 2019</li>
+<p>
+Member of the British Ecological Society and the IUCN Connectivity Conservation Specialist Group.
+</p>
+</section>
 
-        <li><strong>Short-term movements and behaviour govern the use of road mitigation measures by a protected amphibian</strong><br>C. Matos, S.O. Petrovan, P.M. Wheeler, A.I. Ward<br><em>Animal Conservation</em>, 2019</li>
+<section>
+<h2>Research Interests</h2>
+<ul>
+<li>Spatial Ecology</li>
+<li>Movement Ecology</li>
+<li>Ecological Modelling</li>
+<li>Connectivity Conservation</li>
+<li>GIS and Remote Sensing</li>
+</ul>
+</section>
 
-        <li><strong>Facilitating permeability of landscapes impacted by roads for protected amphibians: patterns of movement for the great crested newt</strong><br>C. Matos, S. Petrovan, A.I. Ward, P. Wheeler<br><em>PeerJ</em>, 2017</li>
+<section>
+<h2>Selected Publications</h2>
+<ul>
+<li>
+<b>Landscape connectivity and spatial prioritization in an urbanising world</b><br>
+Biological Conservation (2019)  
+</li>
 
-        <li><strong>Movement of pond-breeding amphibians in fragmented landscapes: responses of Great Crested Newt (Triturus cristatus) to road mitigation</strong><br>C. Matos<br><em>University of Hull</em>, 2017</li>
+<li>
+<b>Short-term movements and behaviour of protected amphibians</b><br>
+Animal Conservation (2019)
+</li>
 
-        <li><strong>Uncovering environmental, land-use and fire effects on the distribution of a low-dispersal species, the Hermann’s tortoise Testudo hermanni</strong><br>A. Badiane, C. Matos, X. Santos<br><em>Amphibia-Reptilia</em>, 2017</li>
+<li>
+<b>Facilitating permeability of landscapes impacted by roads</b><br>
+PeerJ (2017)
+</li>
 
-        <li><strong>Contrasts in short- and long-term responses of Mediterranean reptile species to fire and habitat structure</strong><br>X. Santos, A. Badiane, C. Matos<br><em>Oecologia</em>, 2016</li>
+<li>
+<b>Spatial analysis of amphibian road mortality</b><br>
+Amphibia-Reptilia (2012)
+</li>
+</ul>
 
-        <li><strong>Herpetofauna distribution and species richness in the Litoral Norte Natural Park, Portugal</strong><br>C. Matos<br><em>Bulletín da Sociedade Herpetologica Española</em>, 2012</li>
+<p>
+👉 Full list on <a href="https://scholar.google.com/citations?user=t1rG4EMAAAAJ&hl=en" target="_blank">Google Scholar</a>
+</p>
+</section>
 
-        <li><strong>Unexpected low population levels of Podarcis carbonelli in southern Salamanca (Spain)</strong><br>N. Sillero, E. Argaña, C. Matos, E. Correia, C. Carneiro, V. Gomes<br>2012</li>
+<section>
+<h2>Teaching</h2>
+<p>
+Programme Director of MSc Environmental Change, Management and Monitoring.
+</p>
+<p>
+Teaching in GIS and Remote Sensing at undergraduate and postgraduate level.
+</p>
+</section>
 
-        <li><strong>Spatial analysis of amphibian road mortality levels in northern Portugal country roads</strong><br>C. Matos, N. Sillero, E. Argaña<br><em>Amphibia-Reptilia</em>, 2012</li>
+<section>
+<h2>Editorial Work</h2>
+<p>
+Associate Editor – Ecological Solutions and Evidence (British Ecological Society)
+</p>
+</section>
 
-        <li><strong>New records of Pelodytes spp. and Pleurodeles waltl outside their distribution range in northern Portugal</strong><br>C. Matos, N. Sillero, A. Soares<br><em>Herpetology Notes</em></li>
-      </ul>
-      <p class="small">You can later replace this section with direct paper links or DOI links.</p>
-    </section>
+<section>
+<h2>Links</h2>
+<p>
+<a href="https://scholar.google.com/citations?user=t1rG4EMAAAAJ&hl=en">Google Scholar</a> |
+<a href="https://orcid.org/0000-0001-8452-5629">ORCID</a> |
+<a href="https://www.linkedin.com/in/c%C3%A1tia-matos/">LinkedIn</a>
+</p>
+</section>
 
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <p>
-        Programme Director of the MSc <em>Environmental Change, Management and Monitoring</em>.
-      </p>
-      <p>
-        Module leader for undergraduate and postgraduate teaching in
-        <span class="highlight">GIS and Remote Sensing</span>.
-      </p>
-    </section>
+</div>
 
-    <section id="editorial">
-      <h2>Editorial Work</h2>
-      <p>
-        Associate Editor for <em>Ecological Solutions and Evidence</em> at the British Ecological Society.
-      </p>
-    </section>
+<footer>
+<p>© Dr Catia Matos</p>
+</footer>
 
-    <section id="links">
-      <h2>Professional Links</h2>
-      <div class="links">
-        <a href="https://scholar.google.com/citations?user=t1rG4EMAAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="https://orcid.org/0000-0001-8452-5629" target="_blank">ORCID</a>
-        <a href="https://www.linkedin.com/in/c%C3%A1tia-matos/" target="_blank">LinkedIn</a>
-        <a href="mailto:c.matos@hull.ac.uk">Email</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© Dr Catia Matos · University of Hull</p>
-  </footer>
 </body>
 </html>
